@@ -1,0 +1,345 @@
+:root {
+  --primary-color: rgb(4, 26, 70);
+  --text-color: rgb(16, 50, 88);
+  --text-secondary-color: rgb(238, 248, 255);
+  --text-white: rgb(240, 240, 240);
+}
+
+/*  
+AUTHOR
+Sizenko Alexander
+Style-7
+http://www.styleseven.com
+Created: October 7 2008 
+*/
+@font-face {
+  font-family: 'digital-timer';
+  src: url('modules/digital-7mono.ttf') format('truetype');
+}
+
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  user-select: none;
+  caret-color: var(--text-color);
+  outline: auto;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* page loader */
+
+/* main page */
+/* main page header */
+.block {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4rem;
+  box-shadow: 0 0 20px 0 var(--primary-color), 0 0 40px 0 var(--primary-color), 0 0 80px 0 var(--primary-color);
+  transform: translate(-50%, -50%);
+}
+
+.head-main {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.button-main {
+  width: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem;
+  border: none;
+  border-radius: 2rem;
+  color: wheat;
+  background-color: var(--text-color);
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+/* login and register page styling */
+/* login and register page container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 2rem;
+  border-radius: 2rem;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 10px 0 rgba(21, 35, 62, 0.5);
+}
+
+/* login and register page header */
+.container>.title>h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/* login and register page form */
+.container>form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(100px);
+  box-shadow: 0 0 16px 0 rgba(21, 35, 62, .5) inset;
+}
+
+/* login and register page form containers */
+.container>form>.input-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.container>form>.input-box,
+.extra {
+  position: relative;
+  width: 100%;
+  padding: .5rem;
+}
+
+.container>form>.input-box,
+.extra>label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: .2rem;
+  color: var(--text-color);
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.container>form>.input-box>.passerror {
+  color: rgb(255, 78, 78);
+  font-size: small;
+  text-align: right;
+  font-style: italic;
+  visibility: hidden;
+  text-transform: lowercase;
+}
+
+.container>form>.input-box>input {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: .5rem;
+  border: none;
+  border-radius: .5rem;
+  color: var(--text-color);
+  background-color: var(--text-secondary-color);
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    box-shadow: 2px 2px 5px 0 rgb(21, 35, 62);
+  }
+}
+
+.container>form>button {
+  position: relative;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 100%;
+  padding: .8rem;
+  z-index: 0;
+  margin-top: .2rem;
+  overflow: hidden;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  color: var(--text-secondary-color);
+  text-transform: capitalize;
+  background-color: var(--primary-color);
+
+  &:focus::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background: linear-gradient(50deg, #82add3, #4783b1, #47b1a3, #0e3056);
+    animation: rotate 3s linear alternate-reverse;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 5px;
+    top: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    background: var(--primary-color);
+    border-radius: .8rem;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/* login and register page footer */
+.container>.text {
+  font-size: 1rem;
+  text-align: center;
+  color: var(--text-secondary-color);
+  margin-top: 1rem;
+}
+
+.container>.text>a,
+.container>form>.extra>a {
+  text-decoration: none;
+  color: rgb(89, 43, 214);
+
+  &:visited {
+    color: rgb(214, 43, 177);
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.container>.text>span {
+  display: block;
+  text-transform: uppercase;
+  color: rgb(224, 224, 224);
+  font-weight: bold;
+}
+
+.container>.text>.register-api {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.container>.text>.register-api>span {
+  font: 1rem sans-serif;
+}
+
+.container>.text>.register-api>svg {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: var(--text-secondary-color);
+  padding: .4rem .5rem;
+  border-radius: 1rem;
+
+  &:hover {
+    background-color: #cfcfcf;
+  }
+}
+
+/* pomodoro page styling*/
+.timer-page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--primary-color);
+}
+
+.timer-page>.timer-container {
+  width: min-content;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -80px;
+}
+
+/* pomodoro page header */
+.timer-page>.timer-container>.heading-pomo {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--text-white);
+  text-transform: capitalize;
+  margin: 0;
+}
+
+/* pomodoro page body */
+.timer-page>.timer-container>.wrap-time {
+  display: flex;
+  width: 20rem;
+  height: 20rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: wheat;
+  border-radius: 50%;
+  padding: 4rem;
+  margin: 1rem;
+}
+
+.timer-page>.timer-container>.wrap-time>span {
+  font-family: 'digital-timer';
+  font-size: 10rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.timer-page>.timer-container>button {
+  border-radius: 50%;
+  width: 5rem;
+  aspect-ratio: 1/1;
+  margin: auto;
+  transform: translateY(-125px);
+}
+
+.timer-page>.timer-container>button>img{
+  width: 100%;
+  height: 100%;
+}
+#google-login, #apple-login {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f5f5f5;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#google-login:hover, #apple-login:hover {
+  background-color: #e0e0e0;
+}
+
+#google-login img, #apple-login img {
+  margin-right: 8px;
+}

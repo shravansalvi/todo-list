@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo - Login</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="images/login.png" type="image/x-icon">
+  <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-auth-compat.js"></script>
+</head>
+
+<body background="images/background.jpg">
+  <div class="container">
+    <div class="title">
+      <h2>login form</h2>
+    </div>
+    <form>
+      <div class="input-box">
+        <label for="email">email</label>
+        <input type="email" name="email" id="email" placeholder="Enter your email" required autofocus autocomplete="on">
+      </div>
+      <div class="input-box">
+        <label for="pass">password</label>
+        <input type="password" name="pass" id="pass" placeholder="Enter your password" required autofocus>
+      </div>
+      <div class="extra">
+        <input type="checkbox" id="show">
+        <label for="show">show password</label>
+        <a href="#" style="float: right;">forgot password?</a>
+      </div>
+      <button type="button" onclick="SignIn()">login</button>
+    </form>
+    <div class="text">
+      Don't have an account?
+      <a href="register.html">get started</a>
+      <span>or</span>
+      <div class="register-api">
+        <span>Login with:</span>
+        <!-- Google Login Button -->
+  <button id="google-login" type="button" onclick="googleLogin()">
+    <img src="image/googlelogo.png" alt="Google" width="24" height="24">
+    Google
+  </button>
+
+  <!-- Apple Login Button -->
+  <button id="apple-login" type="button" onclick="appleLogin()">
+    <img src="images/ioslogo.png" alt="Apple" width="24" height="24">
+    Apple
+  </button>
+      </div>
+    </div>
+  </div>
+  <script src="javascript.js"></script>
+</body>
+
+</html>
